@@ -1,0 +1,53 @@
+{
+	"servers": [
+		{
+			"url": "https://example.com/api",
+			"variables": {
+				"environment": {
+					"default": "prod"
+				}
+			}
+		},
+		{
+			"url": "https://local-example.com",
+			"variables": {
+				"environment": {
+					"default": "local"
+				},
+				"basePath": {
+					"default": "/api"
+				}
+			}
+		}
+	],
+	"paths": {
+		"/foo": {
+			"get": {
+				"x-janis-namespace": "foo",
+				"x-janis-method": "list"
+			},
+			"post": {
+				"x-janis-namespace": "foo",
+				"x-janis-method": "create"
+			}
+		},
+		"/foo/{id}": {
+			"get": {
+				"x-janis-namespace": "foo",
+				"x-janis-method": "get"
+			}
+		},
+		"/bar": {
+			"x-janis-namespace": "bar",
+			"x-janis-method": "list",
+			"get": {
+			}
+		},
+		"/bar/{id}": {
+			"x-janis-namespace": "bar",
+			"get": {
+				"x-janis-method": "get"
+			}
+		}
+	}
+}
