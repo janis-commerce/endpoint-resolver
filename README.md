@@ -12,15 +12,13 @@ npm install @janiscommerce/endpoint-resolver
 
 ## API
 
-### EndpointResolver
+### constructor(schema[, environment = 'local'])
+* `schema`: The schema object or file path (JSON only)
+* `environment`: The environment to fetch in the schema servers. Default is local.
 
-#### constructor(schema[, environment = 'local'])
-**schema**: The schema object or file path (JSON only)
-**environment**: The environment to fetch in the schema servers. Default is local.
-
-#### async resolve(namespace, method)
-**namespace**: The namespace to fetch (`x-janis-namespace` in the API schema)
-**method**: The method to fetch (`x-janis-method` in the API schema)
+### async resolve(namespace, method)
+* `namespace`: The namespace to fetch (`x-janis-namespace` in the API schema)
+* `method`: The method to fetch (`x-janis-method` in the API schema)
 
 Resolves an object with the `httpMethod` and `url` properties, or rejects with an error explaining the motive.
 
